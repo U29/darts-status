@@ -13,9 +13,12 @@ const useGetStatus = () => {
   };
 
   const getStatus = async () => {
-    axios("http://localhost:3000/api/proxy/shop/detail.php?shop_id=1362", {
-      headers: headers,
-    })
+    axios(
+      `${process.env.NEXT_PUBLIC_URL}/api/proxy/shop/detail.php?shop_id=1362`,
+      {
+        headers: headers,
+      }
+    )
       .then((response) => {
         setStatus(
           response.data
