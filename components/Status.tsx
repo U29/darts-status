@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useGetStatus } from "./api/useGetStatus";
 
 const Status = () => {
-  const status = "空席あり";
-
+  const [statusFromApi, isStatusLoading] = useGetStatus();
   return (
     <>
-      <p>{status}</p>
+      <h2>{statusFromApi}</h2>
     </>
   );
 };
